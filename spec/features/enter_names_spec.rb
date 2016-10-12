@@ -14,6 +14,14 @@ feature "Hit points" do
   end
 end
 
+feature "Attack" do
+  scenario "Player 1 attacks Player 2 and reduces P2's HPs by 10" do
+    sign_in_and_play
+    click_button "Battle commence!"
+    expect(page).to have_content("Zippy: 90 HP")
+  end
+end
+
 feature "Attack confirmation" do
   scenario "Player 1 attacks Player 2" do
     sign_in_and_play

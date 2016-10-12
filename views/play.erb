@@ -1,12 +1,12 @@
 <h1>Battle</h1>
 
 <h2>Players</h2>
-<%= @player1_name %> vs. <%= @player2_name %>
+<%= @player1.name %> vs. <%= @player2.name %>
 
 <h2>Hit Points</h2>
-<%= @player1_name %>: 100 Hit Points<br>
-<%= @player2_name %>: 100 Hit Points
+<%= @player1.name %>: 100 Hit Points<br>
+<%= @player2.name %>: 100 Hit Points
 
-<form action="/commenced" method="get">
+<form action="/attack" method="get">
   <input type="submit" value="Battle commence!"/>
 </form>

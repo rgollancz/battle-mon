@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/player'
+require './lib/game'
 
 class Battle < Sinatra::Base
 
@@ -16,15 +17,18 @@ class Battle < Sinatra::Base
   end
 
   get '/play' do
-    p @player1_name = $player1.name
-    p @player2_name = $player2.name
+    @player1 = $player1
+    @player2 = $player2
+    $game = Game.new(@player1,@player2)
     erb(:play)
   end
 
-  get '/commenced' do
-    @player1_name = $player1.name
-    @player2_name = $player2.name
-    erb(:commenced)
+  get '/attack' do
+    @player1 = $player1
+    @player2 = $player2
+    @game = $game
+    @game.dropkick(@player2)
+    erb(:attack)
   end
 
   # start the server if ruby file executed directly
