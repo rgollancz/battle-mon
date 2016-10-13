@@ -5,10 +5,12 @@ class Game
   def initialize(player_1,player_2)
     @player1 = player_1
     @player2 = player_2
+    @players = [player_1, player_2]
   end
 
-  def dropkick(victim)
-    victim.receive_damage
+  def dropkick
+    @players[0].receive_damage
+    switch
   end
 
   def player_1_name
@@ -25,6 +27,10 @@ class Game
 
   def player_2_hp
     @player2.hit_points
+  end
+
+  def switch
+    @players.reverse!
   end
 
 end

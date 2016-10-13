@@ -4,8 +4,9 @@
 <%= @game.player_1_name %> vs. <%= @game.player_2_name %>
 
 <h2>Hit Points</h2>
-<%= @game.player_1_name %>: 100 Hit Points<br>
-<%= @game.player_2_name %>: 100 Hit Points
+<%= @game.player_1_name %>: <%= @game.player_1_hp %>
+<br>
+<%= @game.player_2_name %>: <%= @game.player_2_hp %>
 
 <form action="/attack" method="get">
   <input type="submit" value="Battle commence!"/>

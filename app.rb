@@ -24,7 +24,7 @@ class Battle < Sinatra::Base
 
   get '/attack' do
     @game = $game
-    @game.dropkick(@game.player2)
+    @game.dropkick
     erb(:attack)
   end
 
